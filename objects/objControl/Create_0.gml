@@ -1,4 +1,4 @@
-#macro MAX_SIDES 8
+#macro MAX_SIDES 20
 #macro MIN_SIDES 4
 
 global.LAYER_PLATFORMS = layer_get_id("Platforms");
