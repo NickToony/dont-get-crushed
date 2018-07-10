@@ -91,7 +91,7 @@
                 "resourceCreationConfigs": [
                     "default"
                 ],
-                "resourcePath": "scripts\/RandomColour\/RandomColour.yy",
+                "resourcePath": "scripts\/RandomiseTheme\/RandomiseTheme.yy",
                 "resourceType": "GMScript"
             }
         },
@@ -400,6 +400,25 @@
             }
         },
         {
+            "Key": "b3f48cb7-2a38-4f33-ac03-9e516ec7bd67",
+            "Value": {
+                "id": "28514bbf-84bf-4ad6-aa88-6c08876f207a",
+                "modelName": "GMResourceInfo",
+                "mvc": "1.0",
+                "configDeltaFiles": [
+                    
+                ],
+                "configDeltas": [
+                    
+                ],
+                "resourceCreationConfigs": [
+                    "default"
+                ],
+                "resourcePath": "scripts\/color_fix\/color_fix.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "cbe3837a-9fb5-4524-a737-e86301e6853d",
             "Value": {
                 "id": "2c8dcdb1-fdc9-4b45-8dd4-b33171bae571",
@@ -515,7 +534,8 @@
         }
     ],
     "script_order": [
-        "1c8432fa-ec26-459c-9106-a5506057a392"
+        "1c8432fa-ec26-459c-9106-a5506057a392",
+        "b3f48cb7-2a38-4f33-ac03-9e516ec7bd67"
     ],
     "tutorial": ""
 }

@@ -4,7 +4,8 @@ var angle = 0;
 var instances = ds_list_create();
 for (var i = 0; i < global.SIDES; i ++) {
 	var instance = instance_create_layer(0, 0, global.LAYER_PLATFORMS, objPlatform);
-	instance.side = i;
+	instance.side = i
+	instance.row = currentRow;
 	ds_list_add(instances, instance.id);
 }
 
@@ -18,3 +19,5 @@ while (removePlatforms > 0) {
 	removePlatforms -= 1;
 }
 ds_list_destroy(instances);
+
+currentRow += 1;
