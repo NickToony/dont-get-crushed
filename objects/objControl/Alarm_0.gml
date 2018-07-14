@@ -1,9 +1,9 @@
-alarm[0] = room_speed * 2;
+alarm[0] = room_speed * global.DROP_RATE;
 
 var angle = 0;
 var instances = ds_list_create();
 for (var i = 0; i < global.SIDES; i ++) {
-	var instance = instance_create_layer(0, 0, global.LAYER_PLATFORMS, objPlatform);
+	var instance = instance_create_layer(0, 0, global.LAYER_PLATFORMS, objFallingPlatform);
 	instance.side = i
 	instance.row = currentRow;
 	ds_list_add(instances, instance.id);
