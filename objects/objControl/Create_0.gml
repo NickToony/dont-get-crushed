@@ -15,6 +15,7 @@ display_reset(0, true);
 room_speed = 60;
 
 global.LAYER_PLATFORMS = layer_get_id("Platforms");
+global.LAYER_UI = layer_get_id("UI");
 
 global.SIDES = 8;
 global.CENTER_X = room_width/2;
@@ -63,4 +64,8 @@ maxZoom = 7;
 pauseGame = false;
 levelPause = -1;
 
-instance_create_layer(0, 0, global.LAYER_PLATFORMS, objUI);
+if (!instance_exists(objUI)) {
+	instance_create_layer(0, 0, global.LAYER_UI, objUI);
+}
+
+RandomMessage(global.MESSAGES_START);

@@ -1,0 +1,1 @@
+ds_queue_enqueue(objUI.messages, argument0);

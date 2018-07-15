@@ -35,6 +35,9 @@ if (lastSides != global.SIDES) {
 	FixHoles(lastSides < global.SIDES);
 	RandomiseTheme();
 	SetupBasePlatforms(lastSides < global.SIDES);
+	if (lastSides > 0) {
+		RandomMessage(lastSides < global.SIDES ? global.MESSAGES_UP : global.MESSAGES_DOWN);
+	}
 	lastSides = global.SIDES;
 }
 
