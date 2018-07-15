@@ -1,3 +1,5 @@
+if (global.PAUSED) return;
+
 var onFloor = place_meeting(x, y + global.DROP_SPEED*2, objPlatformParent);
 
 if (moveLeft && !moveRight && hspd > -moveSpeed) {
@@ -13,14 +15,16 @@ if (moveLeft && !moveRight && hspd > -moveSpeed) {
 		hspd += accl;
 	}
 } else {
+	var deaccl = onFloor ? accl : airAccel;
+	
 	if (hspd == 0) {
 		// do nothing
-	} else if (abs(hspd) < accl) {
+	} else if (abs(hspd) < deaccl) {
 		hspd = 0;
 	} else if (hspd > 0) {
-		hspd -= accl;
+		hspd -= deaccl;
 	} else if (hspd < 0) {
-		hspd += accl;
+		hspd += deaccl;
 	}
 }
 // Gravity
@@ -60,15 +64,28 @@ x += hspd;
 //Vertical Collision
 // Check head
 var count = 0;
+//var check = instance_place(x, y, objPlatformParent);
+//var dir = -1;
 while (instance_place(x, y, objPlatformParent)) {
 	count += 1;
+	//if (!instance_place(x, y + count, objPlatformParent)) {
+	//	dir = 1;
+	//	break;
+	//} else
+	//if (!instance_place(x, y + count, objPlatformParent)) {
+	//	dir = -1;
+	//	break;
+	//}
 	y += 1;
 }
-
-if (count > global.DROP_SPEED * 2) {
-	game_restart();	
+if (count > global.DROP_SPEED * 20) {
+	//game_restart();	
 } else if (count > 0) {
+	//if (dir == 1) {
+	//	y += global.DROP_SPEED;
+	//} else {
 	y += global.DROP_SPEED;
+	//}
 	jumping = false;
 	vspd = global.DROP_SPEED;
 }
@@ -80,3 +97,6 @@ if (instance_place(x, y + vspd, objPlatformParent)) {
 	vspd = 0;
 }
 y += vspd;
+
+if (x < 0) x += room_width;
+if (x > room_width) x -= room_width;

@@ -134,25 +134,6 @@
             }
         },
         {
-            "Key": "31d5aabb-9b97-4299-8e1b-a5e1ca4447d7",
-            "Value": {
-                "id": "4c8ca7a7-0232-4cf1-801a-2d77a89077db",
-                "modelName": "GMResourceInfo",
-                "mvc": "1.0",
-                "configDeltaFiles": [
-                    
-                ],
-                "configDeltas": [
-                    
-                ],
-                "resourceCreationConfigs": [
-                    "default"
-                ],
-                "resourcePath": "objects\/objPlayformOld\/objPlayformOld.yy",
-                "resourceType": "GMObject"
-            }
-        },
-        {
             "Key": "3226371f-2d09-4491-bdcf-6066a062cb33",
             "Value": {
                 "id": "7fdd4cc2-0e2f-4b5b-a47c-6e6543701759",
@@ -397,6 +378,25 @@
                 ],
                 "resourcePath": "views\/7a522a96-2fef-4f58-b4ae-073be3d93d11.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "87e0338b-6aa6-4cc7-8d36-1c95864e97d5",
+            "Value": {
+                "id": "e7e72477-77f3-41cf-abe9-5917803f3c23",
+                "modelName": "GMResourceInfo",
+                "mvc": "1.0",
+                "configDeltaFiles": [
+                    
+                ],
+                "configDeltas": [
+                    
+                ],
+                "resourceCreationConfigs": [
+                    "default"
+                ],
+                "resourcePath": "objects\/objUI\/objUI.yy",
+                "resourceType": "GMObject"
             }
         },
         {

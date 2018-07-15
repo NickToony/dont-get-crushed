@@ -5,15 +5,16 @@ if (MINIMAL) {
 }
 
 image_alpha = 0.3;
-image_angle -= angle_difference(image_angle, global.ROTATE) * 0.1;
+image_angle -= angle_difference(image_angle, targetRotation) * 0.02;
+global.ROTATE = image_angle;
 
 var skip = true;
 for (var i = 0; i < global.SIDES; i ++) {
 	skip = !skip;
 	if (skip) continue;
 	
-	var angle = (360 / global.SIDES);
-	var rotate = image_angle + (angle * i);
+	var angle = (360 / (global.SIDES));
+	var rotate = global.ROTATE + (angle * i);
 	
 	draw_primitive_begin(pr_trianglelist);
 	draw_vertex_color(global.CENTER_X, global.CENTER_Y, image_blend, image_alpha);

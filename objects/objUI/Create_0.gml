@@ -1,0 +1,1 @@
+if (instance_number(objUI) > 1) instance_destroy();
