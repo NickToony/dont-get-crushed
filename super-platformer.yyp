@@ -229,6 +229,25 @@
             }
         },
         {
+            "Key": "44904c79-986e-4e6a-b231-74f3ea358a4b",
+            "Value": {
+                "id": "468730a3-2ba5-45d2-a470-8ececec0480c",
+                "modelName": "GMResourceInfo",
+                "mvc": "1.0",
+                "configDeltaFiles": [
+                    
+                ],
+                "configDeltas": [
+                    
+                ],
+                "resourceCreationConfigs": [
+                    "default"
+                ],
+                "resourcePath": "sprites\/sprPlay\/sprPlay.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "4a422c9d-bfd8-4ac1-86fd-bccfa6f7a0a1",
             "Value": {
                 "id": "ec037799-78f3-46cc-be74-0d9000f8bd99",
@@ -457,6 +476,25 @@
             }
         },
         {
+            "Key": "876f9c0f-301c-4eca-b302-271eb4036d40",
+            "Value": {
+                "id": "77901ff7-1f18-4108-ba20-7186364f5406",
+                "modelName": "GMResourceInfo",
+                "mvc": "1.0",
+                "configDeltaFiles": [
+                    
+                ],
+                "configDeltas": [
+                    
+                ],
+                "resourceCreationConfigs": [
+                    "default"
+                ],
+                "resourcePath": "sounds\/sndMusic1\/sndMusic1.yy",
+                "resourceType": "GMSound"
+            }
+        },
+        {
             "Key": "87e0338b-6aa6-4cc7-8d36-1c95864e97d5",
             "Value": {
                 "id": "e7e72477-77f3-41cf-abe9-5917803f3c23",
@@ -492,6 +530,25 @@
                 ],
                 "resourcePath": "views\/8ab044e8-c392-4596-aa53-e173f719608b.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "93a04a16-e6e9-478f-9182-afb8ca59e67d",
+            "Value": {
+                "id": "cd562ab5-d747-4b8f-96ea-124afbf27f1a",
+                "modelName": "GMResourceInfo",
+                "mvc": "1.0",
+                "configDeltaFiles": [
+                    
+                ],
+                "configDeltas": [
+                    
+                ],
+                "resourceCreationConfigs": [
+                    "default"
+                ],
+                "resourcePath": "scripts\/RandomMode\/RandomMode.yy",
+                "resourceType": "GMScript"
             }
         },
         {
@@ -809,7 +866,8 @@
         "f74e96c4-6b34-4936-a01f-a3ce6ea165ed",
         "72ec595b-97c1-426a-a879-c92f009df11c",
         "23359634-193b-47fc-94a7-ee551fbc5f0e",
-        "29a47fc8-87f7-47d5-b327-124bf7b6d505"
+        "29a47fc8-87f7-47d5-b327-124bf7b6d505",
+        "93a04a16-e6e9-478f-9182-afb8ca59e67d"
     ],
     "tutorial": ""
 }

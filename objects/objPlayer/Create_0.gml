@@ -19,3 +19,5 @@ canJump = true;
 
 myAngle = 0;
 dist = 0;
+
+lastSides = noone;

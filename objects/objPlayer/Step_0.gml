@@ -1,4 +1,4 @@
-if (global.PAUSED) return;
+if (global.PAUSED || objControl.levelPause > 0) return;
 
 var onFloor = place_meeting(x, y + global.DROP_SPEED*2, objPlatformParent);
 

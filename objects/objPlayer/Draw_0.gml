@@ -11,14 +11,20 @@ dist = (room_height-y);
 
 
 var offset = 0;
-if (dist < 300) {
-	offset = (((300-dist)) / 300) * 10;
-} else {
-	offset = -((dist / SCALE_DISTANCE) * 20);
-}
+//if (dist < 300) {
+//	offset = (((300-dist)) / 300) * 10;
+//} else if (dist < 600) {
+//	offset = -((dist / SCALE_DISTANCE) * 40);
+//} else {
+//	offset = -((dist / SCALE_DISTANCE) * 80);
+//}
+//if (dist > 200) {
+//	offset = - ((dist-200) / SCALE_DISTANCE) * 200;
+//}
+
 var xx = global.CENTER_X + lengthdir_x(dist - offset, myAngle+ global.ROTATE);
 var yy = global.CENTER_Y + lengthdir_y(dist - offset, myAngle+ global.ROTATE);
-var scale = (dist / SCALE_DISTANCE) * 2;
+var scale = min(1, (dist / SCALE_DISTANCE) * 2);
 image_yscale = max(0.5, scale);
 image_yscale = 0.5;
 	
@@ -27,6 +33,6 @@ if (global.MODE == MODE_SPIRAL) {
 }
 
 if (dist < MIN_DISTANCE - 10) {
-	RandomMessage(global.MESSAGES_FAIL);
-	room_restart();	
+	RandomMessage(global.MESSAGES_FAIL, true);
+	instance_destroy();
 }

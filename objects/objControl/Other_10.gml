@@ -32,10 +32,16 @@ currentRow += 1;
 spawnsSinceLastEvent += 1;
 
 if (spawnsSinceLastEvent > 3 + irandom(2)) {
-	global.SIDES += choose (-1, 1);
+	var chance = (lastMode != MODES.NORMAL) ? 8 : 2;
+	if (irandom(50) <= chance) {
+		RandomMode(true);
+	} else {
+		global.SIDES += choose (-1, 1);
+		levelPause = room_speed*2;
+		nextSpawn += levelPause;
+	}
+	
 	spawnsSinceLastEvent = 0;
-	levelPause = room_speed;
-	nextSpawn += room_speed;
 }
 
 if (global.DROP_POSITION < START_DISTANCE) {

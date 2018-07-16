@@ -1,7 +1,7 @@
 #macro MAX_SIDES 20
 #macro MIN_SIDES 4
 #macro MINIMAL true
-#macro DEBUG true
+#macro DEBUG false
 
 #macro MODE_SPIRAL 0
 #macro MODE_FLAT 1
@@ -26,8 +26,8 @@ global.ROTATE = 0;
 global.PAUSED = false;
 
 // Difficulty
-global.DROP_RATE = 1.5;
-global.DROP_SPEED = 2;
+lastMode = -1;
+RandomMode(false);
 
 global.DROP_POSITION = START_DISTANCE;
 
@@ -64,8 +64,15 @@ maxZoom = 7;
 pauseGame = false;
 levelPause = -1;
 
-if (!instance_exists(objUI)) {
-	instance_create_layer(0, 0, global.LAYER_UI, objUI);
+if (global.MENU != MENU.ACTIVE) {
+	if (global.MENU == MENU.FIRST_PLAY) {
+		AddMessage("Space to jump\nWASD/Arrow keys to move", false);
+		AddMessage("Don't get crushed", false);
+		global.MENU = MENU.INACTIVE;
+	} else {
+		randomise();
+		RandomMessage(global.MESSAGES_START, true);
+	}
+	
+	instance_create_layer(global.CENTER_X, global.CENTER_Y, global.LAYER_PLATFORMS, objPlayer);
 }
-
-RandomMessage(global.MESSAGES_START);
