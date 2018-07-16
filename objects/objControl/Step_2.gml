@@ -63,3 +63,13 @@ var vm = matrix_build_lookat(global.CENTER_X, global.CENTER_Y, -10, global.CENTE
 var pm = matrix_build_projection_ortho(view_wport[0] * zoom, view_hport[0] * zoom, 1, 1000);
 camera_set_view_mat(camera, vm);
 camera_set_proj_mat(camera, pm);
+
+if (bounceState == 0) {
+	if (bounce < 1.5) {
+		bounce = lerp(bounce, 2, 0.2);	
+	} else {
+		bounceState = 1;
+	}
+} else {
+	bounce = lerp(bounce, 0, 0.2);	
+}

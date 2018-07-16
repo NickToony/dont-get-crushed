@@ -71,8 +71,8 @@ if (global.MODE == MODE_FLAT) {
 	var targetAngle = (angle * ((global.SIDES - 1) - side )) - 90;
 	drawAngle -= angle_difference(drawAngle, targetAngle) * 0.1;
 	var actualAngle = drawAngle + global.ROTATE;
-	var xx = global.CENTER_X + lengthdir_x(dist, actualAngle);
-	var yy = global.CENTER_Y + lengthdir_y(dist, actualAngle);
+	var xx = global.CENTER_X + lengthdir_x(dist + objControl.bounce, actualAngle);
+	var yy = global.CENTER_Y + lengthdir_y(dist + objControl.bounce, actualAngle);
 	draw_sprite_ext(sprite_index, image_index, xx, yy, drawScaleX, drawScaleY, actualAngle + 90, image_blend, image_alpha);
 }
 

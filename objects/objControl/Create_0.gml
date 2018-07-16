@@ -64,6 +64,9 @@ maxZoom = 7;
 pauseGame = false;
 levelPause = -1;
 
+bounce = 0;
+bounceState = 0;
+
 if (global.MENU != MENU.ACTIVE) {
 	if (global.MENU == MENU.FIRST_PLAY) {
 		AddMessage("Space to jump\nWASD/Arrow keys to move", false);
