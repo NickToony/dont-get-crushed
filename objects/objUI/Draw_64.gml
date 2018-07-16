@@ -18,7 +18,7 @@ if (message == noone) {
 }
 
 draw_set_color(c_white);
-draw_set_font(fntUI);
+draw_set_font(fntUISmaller);
 
 if (global.MENU != MENU.ACTIVE) {
 	draw_set_valign(fa_top);
@@ -32,6 +32,8 @@ draw_text(width-16, 16, "M - Music");
 
 draw_set_valign(fa_center);
 draw_set_halign(fa_center);
+
+draw_set_font(fntUI);
 
 if (global.MENU == MENU.ACTIVE) {
 	var menuText = "Don't Get Crushed";
@@ -58,6 +60,7 @@ if (global.MENU == MENU.ACTIVE) {
 		break;
 	}
 	draw_text(hwidth, hheight, text);
+	draw_set_font(fntUISmaller);
 	draw_text(hwidth, hheight + 64, helpText);
 } else if (global.PAUSED && instance_exists(objPlayer)) {
 	draw_text(hwidth, hheight, "Paused - Press P to unpause");
