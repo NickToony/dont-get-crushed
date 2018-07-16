@@ -1,5 +1,5 @@
 #macro MAX_SIDES 20
-#macro MIN_SIDES 4
+#macro MIN_SIDES 6
 #macro MINIMAL true
 #macro DEBUG false
 
@@ -75,6 +75,7 @@ if (global.MENU != MENU.ACTIVE) {
 	} else {
 		randomise();
 		RandomMessage(global.MESSAGES_START, true);
+		AddMessage("Space to jump", false);
 	}
 	
 	instance_create_layer(global.CENTER_X, global.CENTER_Y, global.LAYER_PLATFORMS, objPlayer);
