@@ -3,22 +3,20 @@ if (global.MODE == MODE_FLAT) {
 }
 
 var w = (room_width-x) / room_width;
-var side = floor(w * global.SIDES);
-var segmentAngle = (360 / global.SIDES);
-myAngle = (w * 360) - 90 - (segmentAngle/2);
-dist = (room_height-y);
-
-////var segmentIndex = 0;
-////var an = 0;
-////while (an < myAngle) {
-////	segmentIndex += 1;
-////	an += segmentAngle;
-////}
-
-//myAngle = (side * segmentAngle) - 90;
-var segmentDir = (side * segmentAngle) - 90;
 var segmentWidth = (room_width / (global.SIDES));
-var percent = abs((x) mod segmentWidth) / segmentWidth;
+var side = 0;
+var xxx = 0;
+while (xxx + segmentWidth < x) {
+	side += 1;
+	xxx += segmentWidth;
+}
+var diff = x - xxx;
+side = (global.SIDES-1) - side;
+
+var segmentAngle = (360 / global.SIDES);
+dist = (room_height-y);
+var segmentDir = (side * segmentAngle) - 90;
+var percent = diff / segmentWidth;
 
 if (lastSides != global.SIDES) {
 	// Cosine rule
