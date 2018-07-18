@@ -10,5 +10,7 @@ ds_list_add(list, "ready, set..");
 ds_list_add(list, "go!");
 ds_list_add(list, "ready player one!");
 ds_list_add(list, "don't get crushed");
+ds_list_add(list, "start your engines!");
+ds_list_add(list, "you got this!");
 
 return list;

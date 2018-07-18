@@ -21,3 +21,6 @@ myAngle = 0;
 dist = 0;
 
 lastSides = noone;
+
+xPrev = 0;
+yPrev = 0;

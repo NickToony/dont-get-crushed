@@ -18,6 +18,9 @@ dist = (room_height-y);
 var segmentDir = (side * segmentAngle) - 90;
 var percent = diff / segmentWidth;
 
+// Needed for camera
+myAngle = (w * 360) - 90 - (segmentAngle/2); 
+
 if (lastSides != global.SIDES) {
 	// Cosine rule
 	var asquared = (sqr(START_DISTANCE) + sqr(START_DISTANCE)) - (2 * (START_DISTANCE) * (START_DISTANCE) * dcos(segmentAngle));
@@ -49,5 +52,12 @@ if (global.MODE == MODE_SPIRAL) {
 
 if (dist < MIN_DISTANCE - 10) {
 	RandomMessage(global.MESSAGES_FAIL, true);
+	repeat (DEATH_COUNT) {
+		instance_create_layer(xPrev, yPrev, global.LAYER_PLATFORMS, objDeath);	
+	}
+	audio_play_sound(sndLose, 100, false);
 	instance_destroy();
 }
+
+xPrev = xx;
+yPrev = yy;

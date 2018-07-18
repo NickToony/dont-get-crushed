@@ -33,14 +33,21 @@ spawnsSinceLastEvent += 1;
 
 if (spawnsSinceLastEvent > 3 + irandom(2)) {
 	var chance = (lastMode != MODES.NORMAL) ? 8 : 2;
-	if (irandom(50) <= chance) {
+	if (irandom(30) <= chance) {
 		RandomMode(true);
 	} else {
-		global.SIDES += choose (-1, 1);
-		levelPause = room_speed*2;
-		nextSpawn += levelPause;
+		if (global.SIDES == MIN_SIDES) {
+			global.SIDES += 1;
+		} else {
+			global.SIDES += choose (-1, 1);	
+		}
+		if (instance_exists(objPlayer)) {
+			levelPause = room_speed*1.5;
+			nextSpawn += levelPause;
+		}
 	}
-	
+	global.DIFFICULTY += 0.05;
+	show_debug_message(global.DIFFICULTY);
 	spawnsSinceLastEvent = 0;
 }
 

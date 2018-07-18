@@ -10,6 +10,8 @@ if (dist > SCALE_DISTANCE + 200) {
 	dist -= global.DROP_SPEED*0.7;
 }
 
+dist -= global.DIFFICULTY;
+
 
 event_inherited();
 

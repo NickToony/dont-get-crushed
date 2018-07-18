@@ -17,5 +17,10 @@ ds_list_add(list, "don't give up");
 ds_list_add(list, "maybe you need to be faster");
 ds_list_add(list, "ouch");
 ds_list_add(list, "did you even read the title?");
+ds_list_add(list, "wanna try that one again?");
+ds_list_add(list, "careful now!");
+ds_list_add(list, "please be careful");
+ds_list_add(list, "keep your eyes on the prize");
+ds_list_add(list, "oh no");
 
 return list;

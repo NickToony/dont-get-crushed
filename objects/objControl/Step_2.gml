@@ -5,7 +5,7 @@
 //	global.SIDES += 1;
 //}
 
-if (keyboard_check_pressed(ord("B")) && DEBUG) {
+if (keyboard_check_pressed(ord("B")) && os_browser == browser_not_a_browser) {
 	global.MODE = (global.MODE == MODE_FLAT) ? MODE_SPIRAL : MODE_FLAT;
 }
 if (keyboard_check_pressed(ord("R"))) {
