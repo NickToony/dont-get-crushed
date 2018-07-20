@@ -1,6 +1,3 @@
-#macro DELAY_LETTER 2
-#macro DELAY_PAUSE room_speed*2
-
 if (instance_number(objUI) > 1) {
 	instance_destroy();
 	return;

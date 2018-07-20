@@ -41,7 +41,7 @@ if (created) {
 }
 
 // Only draw flat if mode is right
-if (global.MODE == MODE_FLAT) {
+if (global.MODE == RENDER_MODE.FLAT) {
 	draw_self();
 } else {
 	var angle = (360 / global.SIDES);

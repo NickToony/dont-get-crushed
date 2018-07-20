@@ -1,4 +1,4 @@
-if (global.MODE == MODE_FLAT) {
+if (global.MODE == RENDER_MODE.FLAT) {
 	draw_self();	
 }
 
@@ -46,7 +46,7 @@ var scale = min(1, (dist / SCALE_DISTANCE) * 2);
 //image_yscale = max(0.5, scale);
 image_yscale = 0.5;
 	
-if (global.MODE == MODE_SPIRAL) {
+if (global.MODE == RENDER_MODE.CIRCLE) {
 	draw_sprite_ext(sprite_index, image_index, xx, yy, scale, scale, segmentDir + 90 + global.ROTATE, image_blend, image_alpha);
 }
 

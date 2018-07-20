@@ -43,10 +43,10 @@ if (global.MENU == MENU.ACTIVE) {
 		if (timer <= 0) {
 			if (count < string_length(menuText)) {
 				count ++;
-				timer = DELAY_LETTER;
+				timer = UI_DELAY_LETTER;
 			} else {
 				stage = MSG_STAGE.PAUSING;
-				timer = DELAY_PAUSE;
+				timer = UI_DELAY_PAUSE;
 			}
 		} else {
 			timer --;	
@@ -71,10 +71,10 @@ if (global.MENU == MENU.ACTIVE) {
 		if (timer <= 0) {
 			if (count < string_length(message)) {
 				count ++;
-				timer = DELAY_LETTER;
+				timer = UI_DELAY_LETTER;
 			} else {
 				stage = MSG_STAGE.PAUSING;
-				timer = DELAY_PAUSE;
+				timer = UI_DELAY_PAUSE;
 			}
 		} else {
 			timer --;	
@@ -96,7 +96,7 @@ if (global.MENU == MENU.ACTIVE) {
 		if (timer <= 0) {
 			if (count > 0) {
 				count --;
-				timer = DELAY_LETTER;
+				timer = UI_DELAY_LETTER;
 			} else {
 				message = noone;
 			}

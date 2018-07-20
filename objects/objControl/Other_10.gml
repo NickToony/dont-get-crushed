@@ -50,7 +50,3 @@ if (spawnsSinceLastEvent > 3 + irandom(2)) {
 	show_debug_message(global.DIFFICULTY);
 	spawnsSinceLastEvent = 0;
 }
-
-if (global.DROP_POSITION < START_DISTANCE) {
-	global.DROP_POSITION += 125;
-}
