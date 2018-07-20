@@ -1,6 +1,6 @@
 if (global.PAUSED || objControl.levelPause > 0) return;
 
-var onFloor = place_meeting(x, y + global.DROP_SPEED*2, objPlatformParent);
+var onFloor = place_meeting(x, y + global.DROP_SPEED*2, parPlatform);
 
 if (moveLeft && !moveRight && hspd > -moveSpeed) {
 	if (onFloor) {
@@ -53,8 +53,8 @@ if (hspd > 0) {
 }
  
 //Horizontal Collision
-if (place_meeting(x + hspd, y, objPlatformParent)) {
-	while (!place_meeting(x + sign(hspd), y, objPlatformParent)) {
+if (place_meeting(x + hspd, y, parPlatform)) {
+	while (!place_meeting(x + sign(hspd), y, parPlatform)) {
 		x += sign(hspd);
 	}
 	hspd = 0;
@@ -64,15 +64,15 @@ x += hspd;
 //Vertical Collision
 // Check head
 var count = 0;
-//var check = instance_place(x, y, objPlatformParent);
+//var check = instance_place(x, y, parPlatform);
 //var dir = -1;
-while (instance_place(x, y, objPlatformParent)) {
+while (instance_place(x, y, parPlatform)) {
 	count += 1;
-	//if (!instance_place(x, y + count, objPlatformParent)) {
+	//if (!instance_place(x, y + count, parPlatform)) {
 	//	dir = 1;
 	//	break;
 	//} else
-	//if (!instance_place(x, y + count, objPlatformParent)) {
+	//if (!instance_place(x, y + count, parPlatform)) {
 	//	dir = -1;
 	//	break;
 	//}
@@ -90,8 +90,8 @@ if (count > global.DROP_SPEED * 20) {
 	vspd = global.DROP_SPEED;
 }
 
-if (instance_place(x, y + vspd, objPlatformParent)) {
-	while(!place_meeting(x,y + sign(vspd), objPlatformParent)) {
+if (instance_place(x, y + vspd, parPlatform)) {
+	while(!place_meeting(x,y + sign(vspd), parPlatform)) {
 	    y += sign(vspd);
 	}
 	vspd = 0;

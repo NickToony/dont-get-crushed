@@ -43,11 +43,11 @@ if (!global.PAUSED) {
 
 if (lastSides != global.SIDES) {
 	global.SIDES = clamp(global.SIDES, MIN_SIDES, MAX_SIDES);
-	FixHoles(lastSides < global.SIDES);
-	RandomiseTheme();
-	SetupBasePlatforms(lastSides < global.SIDES);
+	scrFixHoles(lastSides < global.SIDES);
+	scrThemeRandomise();
+	scrCreateBasePlatforms(lastSides < global.SIDES);
 	if (lastSides > 0) {
-		RandomMessage(lastSides < global.SIDES ? global.MESSAGES_UP : global.MESSAGES_DOWN, false);
+		scrMessageRandom(lastSides < global.SIDES ? global.MESSAGES_UP : global.MESSAGES_DOWN, false);
 	}
 	lastSides = global.SIDES;
 }

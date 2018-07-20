@@ -28,14 +28,14 @@ global.DIFFICULTY = 0;
 
 // Difficulty
 lastMode = -1;
-RandomMode(false);
+scrModeRandomise(false);
 
 global.DROP_POSITION = START_DISTANCE;
 
 currentRow = 0;
 lastSides = 0;
 targetRotation = 0;
-RandomiseTheme();
+scrThemeRandomise();
 
 lastRemoved = ds_list_create();
 
@@ -70,13 +70,13 @@ bounceState = 0;
 
 if (global.MENU != MENU.ACTIVE) {
 	if (global.MENU == MENU.FIRST_PLAY) {
-		AddMessage("Space to jump\nWASD/Arrow keys to move", true);
-		AddMessage("Don't get crushed", false);
+		scrMessageAdd("Space to jump\nWASD/Arrow keys to move", true);
+		scrMessageAdd("Don't get crushed", false);
 		global.MENU = MENU.INACTIVE;
 	} else {
 		randomise();
-		RandomMessage(global.MESSAGES_START, true);
-		AddMessage("Space to jump", false);
+		scrMessageRandom(global.MESSAGES_START, true);
+		scrMessageAdd("Space to jump", false);
 	}
 	
 	instance_create_layer(global.CENTER_X, global.CENTER_Y, "Player", objPlayer);

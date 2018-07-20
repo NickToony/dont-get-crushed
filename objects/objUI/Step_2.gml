@@ -7,5 +7,5 @@ if (browser_width != width || browser_height != height || window_get_fullscreen(
 		width = window_get_width();
 		height = window_get_height();
 	}
-    canvas_fullscreen(width, width, height);
+    scrResizeScreen(width, width, height);
 }

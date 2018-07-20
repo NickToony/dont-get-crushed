@@ -28,10 +28,10 @@ score = 0;
 scoreCounter = room_speed;
 music = true;
 
-global.MESSAGES_FAIL = MessagesFail();
-global.MESSAGES_START = MessagesStart();
-global.MESSAGES_UP = MessagesLevelUp();
-global.MESSAGES_DOWN = MessagesLevelDown();
+global.MESSAGES_FAIL = srcInitFailMessages();
+global.MESSAGES_START = scrInitStartMessages();
+global.MESSAGES_UP = scrInitAddPlatMessages();
+global.MESSAGES_DOWN = scrInitRemovePlatMessages();
 
 global.MENU = MENU.ACTIVE;
 
@@ -41,4 +41,5 @@ width = browser_width;
 height = browser_height;
 fullscreen = false;
 fullscreenLast = fullscreen;
-canvas_fullscreen(base_size, width, height);
+scrResizeScreen(base_size, width, height);
+

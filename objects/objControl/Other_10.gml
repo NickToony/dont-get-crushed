@@ -34,7 +34,7 @@ spawnsSinceLastEvent += 1;
 if (spawnsSinceLastEvent > 3 + irandom(2)) {
 	var chance = (lastMode != MODES.NORMAL) ? 8 : 2;
 	if (irandom(30) <= chance) {
-		RandomMode(true);
+		scrModeRandomise(true);
 	} else {
 		if (global.SIDES == MIN_SIDES) {
 			global.SIDES += 1;

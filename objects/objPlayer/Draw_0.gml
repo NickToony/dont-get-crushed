@@ -51,7 +51,7 @@ if (global.MODE == MODE_SPIRAL) {
 }
 
 if (dist < MIN_DISTANCE - 10) {
-	RandomMessage(global.MESSAGES_FAIL, true);
+	scrMessageRandom(global.MESSAGES_FAIL, true);
 	repeat (DEATH_COUNT) {
 		instance_create_layer(xPrev, yPrev, global.LAYER_PLATFORMS, objDeath);	
 	}
