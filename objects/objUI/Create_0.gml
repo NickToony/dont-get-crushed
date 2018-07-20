@@ -34,3 +34,11 @@ global.MESSAGES_UP = MessagesLevelUp();
 global.MESSAGES_DOWN = MessagesLevelDown();
 
 global.MENU = MENU.ACTIVE;
+
+// Fix scaling
+base_size = browser_width;
+width = browser_width;
+height = browser_height;
+fullscreen = false;
+fullscreenLast = fullscreen;
+canvas_fullscreen(base_size, width, height);
