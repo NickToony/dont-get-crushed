@@ -1,11 +1,10 @@
 #macro MAX_SIDES 20
 #macro MIN_SIDES 4
 #macro MINIMAL true
-#macro DEBUG false
+#macro DEBUG (os_get_config() == "debug")
 
 #macro MODE_SPIRAL 0
 #macro MODE_FLAT 1
-
 
 global.MODE = MODE_SPIRAL;
 

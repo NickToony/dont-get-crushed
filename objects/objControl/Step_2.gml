@@ -1,11 +1,4 @@
-//if (keyboard_check_pressed(vk_down)) {
-//	global.SIDES -= 1;
-//}
-//if (keyboard_check_pressed(vk_up)) {
-//	global.SIDES += 1;
-//}
-
-if (keyboard_check_pressed(ord("B")) && os_browser == browser_not_a_browser) {
+if (keyboard_check_pressed(ord("B")) && DEBUG) {
 	global.MODE = (global.MODE == MODE_FLAT) ? MODE_SPIRAL : MODE_FLAT;
 }
 if (keyboard_check_pressed(ord("R"))) {
