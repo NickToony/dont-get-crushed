@@ -1,5 +1,5 @@
 created = false;
-dist = START_DISTANCE
+dist = START_DISTANCE;
 lastSides = noone;
 spriteWidth = sprite_width;
 spriteHeight = sprite_height;
@@ -8,4 +8,3 @@ destroyCount = 0;
 drawAngle = 0;
 drawScaleX = 1;
 drawScaleY = 1;
-drawDist = 0;

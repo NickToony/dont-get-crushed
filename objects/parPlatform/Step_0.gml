@@ -1,1 +1,1 @@
-drawDist = dist;
+//visible = (dist < SCALE_DISTANCE);
