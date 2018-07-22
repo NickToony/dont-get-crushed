@@ -1,15 +1,17 @@
-if (keyboard_check_pressed(ord("B")) && DEBUG) {
-	global.MODE = (global.MODE == RENDER_MODE.FLAT) ? RENDER_MODE.CIRCLE : RENDER_MODE.FLAT;
+if (DEBUG) {
+	if (keyboard_check_pressed(ord("B"))) {
+		global.MODE = (global.MODE == RENDER_MODE.FLAT) ? RENDER_MODE.CIRCLE : RENDER_MODE.FLAT;
+	}
+	
+	if (keyboard_check_pressed(ord("O"))) {
+		global.SIDES -= 1;
+	} else if (keyboard_check_pressed(ord("I"))) {
+		global.SIDES += 1;	
+	}
 }
 if (keyboard_check_pressed(ord("R"))) {
-	switch (global.MENU) {
-		case MENU.ACTIVE:
-			global.MENU = MENU.FIRST_PLAY;
-			break;
-			
-		case MENU.FIRST_PLAY:
-			global.MENU = MENU.INACTIVE;
-			break;
+	if (global.MENU == MENU.ACTIVE) {
+		global.MENU = MENU.INACTIVE;
 	}
 	
 	room_restart();

@@ -5,7 +5,6 @@ if (instance_number(objUI) > 1) {
 
 enum MENU {
 	ACTIVE,
-	FIRST_PLAY,
 	INACTIVE
 }
 
