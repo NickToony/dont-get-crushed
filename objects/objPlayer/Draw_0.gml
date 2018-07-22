@@ -21,33 +21,41 @@ var percent = diff / segmentWidth;
 // Needed for camera
 myAngle = (w * 360) - 90 - (segmentAngle/2); 
 
-if (lastSides != global.SIDES) {
-	// Cosine rule
-	var asquared = (sqr(START_DISTANCE) + sqr(START_DISTANCE)) - (2 * (START_DISTANCE) * (START_DISTANCE) * dcos(segmentAngle));
-	sideLength = sqrt(asquared);
+//if (lastSides != global.SIDES) {
+//	// Cosine rule
+//	var asquared = (sqr(START_DISTANCE) + sqr(START_DISTANCE)) - (2 * (START_DISTANCE) * (START_DISTANCE) * dcos(segmentAngle));
+//	sideLength = sqrt(asquared);
 	
-	// Pythag
-	var distSquared = sqr(START_DISTANCE) - sqr(sideLength/2);
-	initialDist = sqrt(distSquared);	
+//	// Pythag
+//	var distSquared = sqr(START_DISTANCE) - sqr(sideLength/2);
+//	initialDist = sqrt(distSquared);	
 		
-	lastSides = global.SIDES;
-}
+//	lastSides = global.SIDES;
+//}
 
-var radialWidth = sideLength * (dist / initialDist);
+var asquared = (sqr(dist) + sqr(dist)) - (2 * (dist) * (dist) * dcos(segmentAngle));
+var sideLength = sqrt(asquared);
+	
+var distSquared = sqr(dist) - sqr(sideLength/2);
+var vertexDist = sqrt(distSquared);	
+
+var radialWidth = sideLength;
 
 var offset = (dist / START_DISTANCE) * 32;
-var xx = global.CENTER_X + lengthdir_x(dist + offset, segmentDir + global.ROTATE);
-var yy = global.CENTER_Y + lengthdir_y(dist + offset, segmentDir + global.ROTATE);
+//offset = 0;
+var xx = global.CENTER_X + lengthdir_x(vertexDist + offset, segmentDir + global.ROTATE);
+var yy = global.CENTER_Y + lengthdir_y(vertexDist + offset, segmentDir + global.ROTATE);
 
 xx += lengthdir_x( (percent * radialWidth) - radialWidth/2, segmentDir + global.ROTATE - 90);
 yy += lengthdir_y( (percent * radialWidth) - radialWidth/2, segmentDir + global.ROTATE - 90);
 
 var scale = min(1, (dist / SCALE_DISTANCE) * 2);
-//image_yscale = max(0.5, scale);
-image_yscale = 0.5;
+image_yscale = max(0.5, scale);
 	
 if (global.MODE == RENDER_MODE.CIRCLE) {
-	draw_sprite_ext(sprite_index, image_index, xx, yy, scale, scale, segmentDir + 90 + global.ROTATE, image_blend, image_alpha);
+	var tarAngle = segmentDir + 90 + global.ROTATE;
+	drawAngle -= angle_difference(drawAngle, tarAngle) * 0.1;
+	draw_sprite_ext(sprite_index, image_index, xx, yy, scale, scale, drawAngle, image_blend, image_alpha);
 }
 
 if (dist < MIN_DISTANCE - 10) {

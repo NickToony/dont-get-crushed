@@ -24,3 +24,5 @@ lastSides = noone;
 
 xPrev = 0;
 yPrev = 0;
+
+drawAngle = 0;
